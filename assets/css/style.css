@@ -70,7 +70,7 @@ h6 {
 --------------------------------------------------------------*/
 
 #topbar {
-    background: #5f5d5d;
+    background: #ffffff;
     height: 40px;
     font-size: 14px;
     transition: all 0.5s;
@@ -87,11 +87,11 @@ h6 {
 }
 
 #topbar .contact-info a:hover {
-    color: #e02f3e;
+    color: #e21b2b;
 }
 
 #topbar .contact-info i {
-    color: #e02f3e;
+    color: #e21b2b;
     padding-right: 4px;
 }
 
@@ -613,7 +613,7 @@ section {
 }
 
 .section-bg {
-    background-color: #6e6e6e;
+    background-color: #030303;
 }
 
 .section-title {
@@ -1178,7 +1178,7 @@ section {
 }
 
 .team .member .social a {
-    color: #919191;
+    color: #350909;
     transition: 0.3s;
 }
 
