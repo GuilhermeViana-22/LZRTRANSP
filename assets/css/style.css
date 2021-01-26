@@ -690,8 +690,9 @@ section {
     font-size: 18px;
 }
 
-.featured-services .title a {
-    color: #222222;
+.featured-services .title a,
+p {
+    color: #cac8c8;
     transition: 0.3s;
 }
 
