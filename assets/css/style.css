@@ -1593,3 +1593,13 @@ p {
 #footer .credits {
     font-size: 13px;
 }
+.info{
+        height: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    #icon{
+        color: #e02f3e;
+        font-size: 20pt;
+    }
