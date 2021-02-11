@@ -16,9 +16,9 @@
                 </a>
                 <div class="collapse" id="controleusu" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="cadastro_venda.php">Tabela de frete </a>
+                        <a class="nav-link" href="Tb_Frete.php">Tabela de frete </a>
                         <a class="nav-link" href="agendamento.php">Certificações</a>
-                        <a class="nav-link" href="agendamento.php">Documentos</a>
+                        <a class="nav-link" href="uplod.php">Documentos</a>
                        
                     </nav>
                 </div>
