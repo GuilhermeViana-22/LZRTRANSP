@@ -28,12 +28,12 @@ if ($cnpjEmpresa && $emailContato) {
   $mail->isSMTP();
   $mail->Host = 'smtp.gmail.com';
   $mail->SMTPAuth = true;
-  $mail->Username = 'elton14cdz@gmail.com';
-  $mail->Password = 'Elton0105';
+  $mail->Username = 'elton13cdz@gmail.com';
+  $mail->Password = 'Justino123456';
   $mail->Port = 587;
 
-  $mail->setFrom('elton14cdz@gmail.com');
-  $mail->addAddress('elton14cdz@gmail.com');
+  $mail->setFrom('elton13cdz@gmail.com');
+  $mail->addAddress('elton13cdz@gmail.com');
 
   $mail->isHTML(true);
   $mail->Subject = 'contato pelo site lzr';
