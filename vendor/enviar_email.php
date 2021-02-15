@@ -6,13 +6,14 @@
     </head>
     <body>
         <?php
+        require 'vendor/autoload.php';
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $telefone = $_POST['telefone'];
         $assunto = $_POST['assunto'];
         $texto = $_POST['texto'];
 
-        require 'vendor/autoload.php';
+        
 
         $from = new SendGrid\Email(null, "elton13cdz@gmail.com");
         $subject = "Contato";
@@ -21,8 +22,8 @@
         Nome: $nome<br> E-mail:$email<br> Telefone:$telefone <br> Assunto:$assunto <br> Texto:$texto");
         $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
-        //Necessário inserir a chave
-        $apiKey = 'SENDGRID_API_KEY';
+        //Necessário inserir a chave : senha Kelvin!993jeffrey
+        $apiKey = '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';
         $sg = new \SendGrid($apiKey);
 
         $response = $sg->client->mail()->send()->post($mail);

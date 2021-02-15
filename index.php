@@ -345,7 +345,7 @@
                 <div class="row">
 
                     <div id="fomulario" class="col-flex align-items-center">
-                        <form action="contact.php" method="POST" role="form" class="php-email-form">
+                        <form action="contato.php" method="POST" role="form" class="php-email-form">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label >Nome da Empresa </label>
