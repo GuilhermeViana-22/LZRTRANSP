@@ -87,13 +87,13 @@
                     <li><a href="#">Drop Down 2</a></li>
                     <li><a href="#">Drop Down 3</a></li>
                     <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#contact">Contação</a></li>
+                </ul>
+                </li>
+                <li><a href="#contact">Contação</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
-            <button class="btn btn-danger col-md-1" style="margin-left: 20px;">Login</a>
+            <button class="btn btn-danger col-md-1" style="margin-left: 20px;">Login<a href="login/Login_page.php"></a></button>
 
         </div>
     </header>
@@ -288,8 +288,7 @@
                         <div class="icon-box iconbox-blue">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                                        d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174">
+                                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174">
                                     </path>
                                 </svg>
                                 <i class="icofont-list"></i>
@@ -299,13 +298,11 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                         <div class="icon-box iconbox-orange ">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                                        d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426">
+                                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426">
                                     </path>
                                 </svg>
                                 <i class="icofont-truck-loaded"></i>
@@ -315,13 +312,11 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-                        data-aos-delay="300">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                         <div class="icon-box iconbox-pink">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                                        d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781">
+                                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781">
                                     </path>
                                 </svg>
                                 <i class="icofont-map-pins"></i>
@@ -349,37 +344,32 @@
 
                 <div class="row">
 
-                    <div id="fomulario"class="col-flex align-items-center">
-                        <form  method="post" action="contact.php" role="form" class="php-email-form">
+                    <div id="fomulario" class="col-flex align-items-center">
+                        <form action="teste_email.php" method="POST" role="form" class="php-email-form">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="name">Nome da Empresa </label>
-                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4"
-                                        data-msg="Please enter at least 4 chars" />
+                                    <label >Nome da Empresa </label>
+                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4" data-msg="Digite o nome da empresa" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="name">CNPJ da Empresa </label>
-                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4"
-                                        data-msg="Please enter at least 4 chars" />
+                                    <label >CNPJ da Empresa </label>
+                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4" data-msg="Digite o CNPJ da empresa" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Nome do Responsavel</label>
-                                    <input type="text" class="form-control" name="nomeResponsavel nome" id="nomeResponsavel" data-rule="email"
-                                        data-msg="Please enter a valid email" />
+                                    <input type="text" class="form-control" name="nomeResponsavel nome" id="nomeResponsavel" data-rule="minlen:4" data-msg="digite o nome do reponsavel pelo assunto" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">E-mail de contato</label>
-                                    <input type="email" class="form-control" name="emailContato" id="emailContato" data-rule="email"
-                                        data-msg="Please enter a valid email" />
+                                    <input type="email" class="form-control" name="email" id="emailContato" data-rule="minlen:4" data-msg="coloque um email" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Telefone de contato</label>
-                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="email"
-                                        data-msg="Please enter a valid email" />
+                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Coloque um telefone de contato" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -400,7 +390,7 @@
                                     </select>
                                     <div class="validate"></div>
                                 </div>
-                                
+
                                 <div class="form-group col-md-12">
                                     <label for="name">Classificação</label>
                                     <select class="form-control form-select-lg mb-6" name="classificacao">
@@ -417,106 +407,112 @@
                                         <option value="1">Esporadicas</option>
                                         <option value="1">Até três vezes na semana</option>
                                         <option value="1">Pelo menos uma vez na</option>
-    
+
                                     </select>
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de produto</label>
-                                    <input type="text" class="form-control" name="produto" id="email" data-rule="email"
-                                        data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual produto será transportado ?" />
+                                    <input type="text" class="form-control" name="produto" id="email" data-rule="minlen:4" data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual produto será transportado ?" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
-                            <div class="text-center"><button  type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
+                            <?php if (isset($_GET["erro"]) && $_GET["erro"] == 1) { ?>
+
+                                <div class="painel-erro">
+                                    Erro ao enviar.
+                                </div>
+
+                            <?php } ?>
+                            <div class="text-center"><button type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
 
 
 
-        <!--  <div class="mb-6">
+                            <!--  <div class="mb-6">
                                 <div class="loading">Por gentileza aguarde</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
                             </div>-->
 
-        </form>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
         </section>
         <!-- End Contact Section -->
 
-        </main>
-        <!-- End #main -->
+    </main>
+    <!-- End #main -->
 
-        <!-- ======= Footer ======= -->
-        <footer id="footer">
-            <div class="container">
-                <div class="info">
-                    <div class="address">
-                        <i id="icon" class="icofont-google-map"></i>
-                        <h4>Localização</h4>
-                        <p>Ende do lanzara</p>
-                    </div>
-
-                    <div class="email">
-                        <i id="icon" class="icofont-envelope"></i>
-                        <h4>Email</h4>
-                        <p>Email do lanzara</p>
-                    </div>
-
-                    <div class="phone">
-                        <i id="icon" class="icofont-phone"></i>
-                        <h4>Telefone</h4>
-                        <p>+55 11 99972773</p>
-                    </div>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="info">
+                <div class="address">
+                    <i id="icon" class="icofont-google-map"></i>
+                    <h4>Localização</h4>
+                    <p>Ende do lanzara</p>
                 </div>
 
+                <div class="email">
+                    <i id="icon" class="icofont-envelope"></i>
+                    <h4>Email</h4>
+                    <p>Email do lanzara</p>
+                </div>
+
+                <div class="phone">
+                    <i id="icon" class="icofont-phone"></i>
+                    <h4>Telefone</h4>
+                    <p>+55 11 99972773</p>
+                </div>
             </div>
-            <h3>LZR TRANSPORTES</h3>
-            <p>É preciso olhar para o novo e para as novas formas de atuar</p>
 
-            <div class="copyright">
-                &copy; Copyright <strong><span>LANZARA TRANSPORTES EIRELLI</span></strong>. Todos os direitos reservados
-            </div>
+        </div>
+        <h3>LZR TRANSPORTES</h3>
+        <p>É preciso olhar para o novo e para as novas formas de atuar</p>
 
-            </div>
-        </footer>
-        <!-- End Footer -->
+        <div class="copyright">
+            &copy; Copyright <strong><span>LANZARA TRANSPORTES EIRELLI</span></strong>. Todos os direitos reservados
+        </div>
 
-        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        </div>
+    </footer>
+    <!-- End Footer -->
 
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/jquery/jquery.min.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-        <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
-        <script>
-            jQuery(document).ready(function() {
-                $('.nome').mask('A', {
-                    translation: {
-                        A: {
-                            pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g,
-                            recursive: true
-                        },
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>/*
+        jQuery(document).ready(function() {
+            $('.nome').mask('A', {
+                translation: {
+                    A: {
+                        pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g,
+                        recursive: true
                     },
-                });
-                $('.cnpj').mask('000.000.000-00', {
-                    reverse: true
-                });
-                $('.money2').mask("000", {
-                    reverse: true
-                });
-                $('.telefone').mask("(00)00000-0000")
-            })
-        </script>
+                },
+            });
+            $('.cnpj').mask('000.000.000-00', {
+                reverse: true
+            });
+            $('.money2').mask("000", {
+                reverse: true
+            });
+            $('.telefone').mask("(00)00000-0000")
+        })*/
+    </script>
 </body>
 
 </html>

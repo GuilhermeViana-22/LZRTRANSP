@@ -1,5 +1,16 @@
 <?php
 /* variaveis que recebe os dados do formulario atraves do método post */
+date_default_timezone_set('America/Sao_Paulo');
+
+require_once('src/PHPMailer.php');
+require_once('src/SMTP.php');
+require_once('src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
 
 $nomeEmpresa = addslashes($_POST['nameEmpresa']);
 $cnpjEmpresa = addslashes($_POST['cnpjEmpresa']);
@@ -11,50 +22,101 @@ $tipoRota = addslashes($_POST['tipoRota']);
 $classificacao = addslashes($_POST['classificacao']);
 $frenquecia = addslashes($_POST['frenquecia']);
 $produto = addslashes($_POST['produto']);
-$erro = 0;
-// validação basica das variaveis 
-if (empty($nomeEmpresa) or strstr ($nome, ' ') == FALSE){
-echo "favor digita o nome.<br>"; $erro=1;
+$data = date('d/m/Y H:i:s');
+if ($cnpjEmpresa && $emailContato) {
+  $mail = new PHPMailer();
+  $mail->isSMTP();
+  $mail->Host = 'smtp.gmail.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'elton14cdz@gmail.com';
+  $mail->Password = 'Elton0105';
+  $mail->Port = 587;
 
-    
-}else
+  $mail->setFrom('elton14cdz@gmail.com');
+  $mail->addAddress('elton14cdz@gmail.com');
 
-if (empty($emailContato) || strstr ($email, '@') == FALSE){
-echo "favor digita um email valido.<br>"; $erro=1;
+  $mail->isHTML(true);
+  $mail->Subject = 'contato pelo site lzr';
+  $mail->Body = "Nome da Empresa: {$nomeEmpresa}<br>
+				   Email: {$emailContato}<br>
+				   CNPJ: {$cnpjEmpresa}<br>
+				   Data/hora: {$data}";
 
-    
-}else
-
-if($erro == 0){
-/* procedimento que envia o dados do formulario para o email na qual sera enviado*/
-// No $to voce coloca o emaio do destinatario
-
-$to ="elton13cdz@gmail.com";
-// no $subject voce coloca o assunto que aparecera no email
-$subject ="Contato pelo Site Lanzara Tranporte";
-// e o menssagem a onde irao as variasveis com os dados que aparecera no email
-$mensagem ="Nome da Empresa: ".$nomeEmpresa."\r\n".
-             "CNPJ: ".$cnpjEmpresa ."\r\n".
-              "Nome do Responsavel: ".$nomeResponsavel."\r\n".
-               "Email: ".$emailContato."\r\n".
-               "Telefone: ".$telefoneContato."\r\n".
-               "Peso da Carga: ".$PesoCarga."\r\n".
-               "Tipo de Rota: ".$tipoRota."\r\n".
-               "Classificação: ".$classificacao."\r\n".
-               "Frequencia: ".$frenquecia."\r\n".
-               "produto: ".$produto;
-// header a onde mostrara o email que quem fez o contato. para possivel retorno 
-$header = "From:elton13cdz@gmail.com"."\r\n"."Reply-To:".$emailContato."\e\n".
-"X=Mailer:PHP/".phpversion(); /* a função phpversion localiza a versao mais atualizada do
- php impedido erros na hora de loca a tecnologia*/
-
- // verificação se o email foi enviado ou nao 
-if(mail($to,$subject,$mensagem,$header)){
-echo("Email enviado!");
+  if ($mail->send()) {
+    echo 'Email enviado com sucesso.';
+    header("Location: index.php?sucess=1");
+  } else {
+    echo 'Email não enviado.';
+    header("Location: index.php?erro=1");
+  }
 }else{
-echo("O email nao foi enviado");
+  echo 'informa o email e o cnpj';
 }
-    
+	
+
+
+
+
+
+/*
+
+require_once('src/PHPMailer.php');
+require_once('src/SMTP.php');
+require_once('src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+$nomeEmpresa = addslashes($_POST['nameEmpresa']);
+$cnpjEmpresa = addslashes($_POST['cnpjEmpresa']);
+$nomeResponsavel = addslashes($_POST['nomeResponsavel']);
+$emailContato = addslashes($_POST['emailContato']);
+$telefoneContato = addslashes($_POST['telefoneContato']);
+$PesoCarga = addslashes($_POST['PesoCarga']);
+$tipoRota = addslashes($_POST['tipoRota']);
+$classificacao = addslashes($_POST['classificacao']);
+$frenquecia = addslashes($_POST['frenquecia']);
+$produto = addslashes($_POST['produto']);
+
+
+$mail = new PHPMailer(true);
+
+try{
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+  $mail->isSMTP();
+  $mail->Host = 'smtp.gmail.com';
+  $mail->SMTPAuth=true;
+  $mail->Username='elton13cdz@gmail.com';
+  $mail->Password='justino123456';
+  $mail->Port = 587;
+
+  $mail->setFrom('elton13cdz@gmail.com');
+  $mail->addAddress('elton13cdz@gmail.com');
+
+$mail->isHTML(true);
+$mail->Subject = 'teste de email';
+$mail->Body = "Nome da Empresa: ".$nomeEmpresa."\r\n".
+"CNPJ: ".$cnpjEmpresa ."\r\n".
+ "Nome do Responsavel: ".$nomeResponsavel."\r\n".
+  "Email: ".$emailContato."\r\n".
+  "Telefone: ".$telefoneContato."\r\n".
+  "Peso da Carga: ".$PesoCarga."\r\n".
+  "Tipo de Rota: ".$tipoRota."\r\n".
+  "Classificação: ".$classificacao."\r\n".
+  "Frequencia: ".$frenquecia."\r\n".
+  "produto: ".$produto;
+
+  if($mail->send()){
+    echo'email enviado';
+  }else{
+    echo 'email nao enviado';
+  }
+
+}catch (Exception $e){
+  echo "erro ao enviar menssagem: {$mail->ErrorInfo}";
+
 }
   /**
   * Requires the "PHP Email Form" library
