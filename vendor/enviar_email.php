@@ -6,12 +6,12 @@
     </head>
     <body>
         <?php
-        require 'vendor/autoload.php';
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $assunto = $_POST['assunto'];
-        $texto = $_POST['texto'];
+        require 'autoload.php';
+        $nome ="elton"; //$_POST['nome'];
+        $email = "elton14cdz@gmail.com ";// $_POST['email'];
+        $telefone ="1122221514"; //$_POST['telefone'];
+        $assunto ="teste email sendgrid"; //$_POST['assunto'];
+        $texto ="esta funcionando"; //$_POST['texto'];
 
         
 
@@ -28,8 +28,8 @@
 
         $response = $sg->client->mail()->send()->post($mail);
         echo $response->statusCode();
-        echo $response->headers();
-        echo $response->body();
+       // echo $response->headers();
+       // echo $response->body();
         ?>
     </body>
 </html>
