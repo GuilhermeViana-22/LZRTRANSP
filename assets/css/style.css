@@ -1537,7 +1537,7 @@ p {
 --------------------------------------------------------------*/
 
 #footer {
-    background: #090909;
+    background-image: url("../img/footer-background.jpg");
     color: #fff;
     font-size: 14px;
     text-align: center;
