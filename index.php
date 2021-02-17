@@ -17,8 +17,8 @@ $mensagem ="Nome: ".$nome."\r\n".
                "Assunto: ".$assunto."\r\n".
                "Texto: ".$texto;
 
-$header = "From:elton13cdz@gmail.com"."\r\n"."Reply-To:".$email."\e\n".
-"X=Mailer:PHP/".phpversion(); 
+$header = "From:elton13cdz@gmail.com"."\r\n"."Reply-To:".$email."\e\n"
+.phpversion(); 
 if(mail($to,$subject,$mensagem,$header)){
 echo("Email enviado!");
 }else{
