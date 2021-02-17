@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>teste email</title>
-    </head>
-    <body>
+
         <?php
-        require 'autoload.php';
+        require 'vendor\autoload.php';
         $nome ="elton"; //$_POST['nome'];
         $email = "elton14cdz@gmail.com ";// $_POST['email'];
         $telefone ="1122221514"; //$_POST['telefone'];
@@ -23,7 +17,7 @@
         $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
         //Necessário inserir a chave : senha Kelvin!993jeffrey
-        $apiKey = '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';
+        $apiKey = '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';
         $sg = new \SendGrid($apiKey);
 
         $response = $sg->client->mail()->send()->post($mail);
@@ -31,5 +25,4 @@
         echo $response->headers();
         echo $response->body();
         ?>
-    </body>
-</html>
+ 

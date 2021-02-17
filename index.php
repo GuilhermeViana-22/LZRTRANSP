@@ -335,7 +335,7 @@
                 <div class="row">
 
                     <div id="fomulario" class="col-flex align-items-center">
-                        <form method="post" action="contact.php" role="form" class="php-email-form">
+                        <form method="post" action="teste_email.php" role="form" class="php-email-form">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="name">Nome da Empresa </label>
@@ -352,7 +352,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="name">Nome do Responsavel</label>
                                     <input type="text" class="form-control" name="nomeResponsavel nome"
-                                        id="nomeResponsavel" data-rule="email" data-msg="Please enter a valid email" />
+                                        id="nomeResponsavel" data-rule="minlen:4" data-msg="Please enter a valid email" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -364,7 +364,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="name">Telefone de contato</label>
                                     <input type="text" class="form-control " name="telefoneContato" id="telefoneContato"
-                                        data-rule="email" data-msg="Please enter a valid email" />
+                                        data-rule="minlen:4" data-msg="Please enter a valid email" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -408,7 +408,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de produto</label>
-                                    <input type="text" class="form-control" name="produto" id="email" data-rule="email"
+                                    <input type="text" class="form-control" name="produto" id="email" data-rule="minlen:4"
                                         data-msg="Preencha o tipo de produto que será transportado"
                                         placeholder="Qual produto será transportado ?" />
                                     <div class="validate"></div>

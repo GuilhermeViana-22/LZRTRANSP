@@ -1,4 +1,48 @@
-<?php/*
+<?php
+$nome = addslashes($_POST['nameEmpresa']);
+$email = addslashes($_POST['emailContato']);
+$telefone = addslashes($_POST['telefoneContato']);
+$assunto = addslashes($_POST['cnpjEmpresa']);
+$texto = addslashes($_POST['produto']);
+$erro = 0;
+
+if (empty($nome) or strstr ($nome, ' ') == FALSE){
+echo "favor digita o nome.<br>"; $erro=1;
+
+    
+}else
+
+if (empty($email) || strstr ($email, '@') == FALSE){
+echo "favor digita um email valido.<br>"; $erro=1;
+
+    
+}else
+if($erro == 0){
+
+
+$to ="elton13cdz@gmail.com";
+$subject ="Site - Tapeçaria";
+$mensagem ="Nome: ".$nome."\r\n".
+             "Email: ".$email ."\r\n".
+              "Telefone: ".$telefone."\r\n".
+               "Assunto: ".$assunto."\r\n".
+               "Texto: ".$texto;
+
+$header = "From:elton13cdz@gmail.com"."\r\n"."Reply-To:".$email."\e\n".
+"X=Mailer:PHP/".phpversion(); 
+if(mail($to,$subject,$mensagem,$header)){
+echo("Email enviado!");
+}else{
+echo("O email nao foi enviado");
+}
+    
+}
+
+
+
+
+
+/*
 $nomeEmpresa = addslashes($_POST['nameEmpresa']);
 $cnpjEmpresa = addslashes($_POST['cnpjEmpresa']);
 $nomeResponsavel = addslashes($_POST['nomeResponsavel']);
@@ -9,7 +53,7 @@ $tipoRota = addslashes($_POST['tipoRota']);
 $classificacao = addslashes($_POST['classificacao']);
 $frenquecia = addslashes($_POST['frenquecia']);
 $produto = addslashes($_POST['produto']);
-*/
+
 $assunto = $_POST['emailContato'];
 $Corpo = "
 nome_da_empresa:".$_POST['nameEmpresa']."
@@ -28,7 +72,7 @@ echo 'seus dados foram enviado com sucesso';
 
 
 
-
+*/
 
 
 ?>
