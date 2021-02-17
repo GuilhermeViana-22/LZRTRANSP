@@ -6,17 +6,6 @@ $assunto = addslashes($_POST['cnpjEmpresa']);
 $texto = addslashes($_POST['produto']);
 $erro = 0;
 
-if (empty($nome) or strstr ($nome, ' ') == FALSE){
-echo "favor digita o nome.<br>"; $erro=1;
-
-    
-}else
-
-if (empty($email) || strstr ($email, '@') == FALSE){
-echo "favor digita um email valido.<br>"; $erro=1;
-
-    
-}else
 if($erro == 0){
 
 
