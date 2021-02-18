@@ -347,7 +347,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Nome do Solicitante</label>
-                                    <input type="text" class="form-control" name="nomeResponsavel nome" id="nomeResponsavel" data-rule="minlen:4" data-msg="Por favor informar o nome para que possamos entrar em contato" />
+                                    <input type="text" class="form-control" name="nomeResponsavel" id="nomeResponsavel" data-rule="minlen:4" data-msg="Por favor informar o nome para que possamos entrar em contato" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -370,18 +370,18 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="name">Tipo de Rota</label>
-                                    <select class="form-control form-select-lg mb-6" name="tipoRota">
-                                        <option selected>Selecione o tipo de rota desejada </option>
-                                        <option value="1">Rota única</option>
-                                        <option value="2">Múltiplas rotas</option>
+                                    <label for="name">Tipo de Carga</label>
+                                    <select class="form-control form-select-lg mb-6" name="tipoCarga">
+                                  
+                                        <option value="1">Lotação</option>
+                                        <option value="2">fracionada</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="name">Selecione o tipo de rota desejada </label>
-                                    <select class="form-control form-select-lg mb-6" name="classificacao">
+                                    <select class="form-control form-select-lg mb-6" name="tipoRota">
                                         <option value="1">Rota única</option>
                                         <option value="2">Múltiplas rotas</option>
                                     </select>
@@ -397,7 +397,7 @@
                                     </select>
                                     <div class="validate"></div>
                                 </div>
-                                   <div class="form-group col-md-12">
+                                <div class="form-group col-md-12">
                                     <label for="name">Valor da mercadoria</label>
                                     <input type="text" class="form-control" name="Valor_produto" id="Valor_produto" data-rule="minlen:4" data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual o valor aproximado do produto que será transportado ?" />
                                     <div class="validate"></div>
@@ -409,7 +409,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Classificação</label>
-                                    <input type="text" class="form-control" name="classificado" id="classificado" data-rule="minlen:4" placeholder="informar número de ONU e número de risco?" />
+                                    <input type="text" class="form-control" name="classificacao" id="classificacao" data-rule="minlen:4" placeholder="informar número de ONU e número de risco?" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
@@ -495,9 +495,7 @@
                 document.write(new Date().getFullYear());
             </script>
 
-        </div>
-
-        </div>
+      
     </footer>
     <!-- End Footer -->
 
@@ -548,11 +546,13 @@
             });
         });
 
-        Login_page
+        /*função de redirecionamento*/
 
         function redirecionar() {
             window.location.href = "http://localhost/Lanzara/trunk/login/Login_page.php";
         }
+
+       
     </script>
 </body>
 
