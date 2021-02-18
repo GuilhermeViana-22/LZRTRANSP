@@ -18,28 +18,31 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
 $mail = new PHPMailer(); // instacia a classe 
 $mail->isSMTP(); // informa o tipo de entrada 
 
-$mail->Host = "smtp.mail.yahoo.com";// smtp do gmail: gmail.com
-$mail->Port = 465; //porta do gmail 587;
+$mail->Host = "smtp.gmail.com";// smtp do gmail: gmail.com
+$mail->Port = 587; //porta do gmail 587; porta do yahoo 465
 $mail->SMTPSecure = "tls"; // informa que o email é seguro 
 $mail->SMTPAuth = true; // e informa que o emaio é verificado
-$mail->Username = "email do lanzara"; // email do destinatario
-$mail->Password = "senha do lazara"; // senha do destinatrio de acesso ao email
+$mail->Username = "gguicido.viana@gmail.com"; // email do destinatario
+$mail->Password = "1Marmaduki"; // senha do destinatrio de acesso ao email
 
 $mail->setFrom($mail->Username, $nomeEmpresa); // iforma o remetente 
-$mail->addAddress('elton13cdz@gmail.com'); // emaio que vai recerber as informação(destinatario)
-$mail->Subject = "contato pelo site lanzara ttrsnporte";// titulo do email (assunto)
+$mail->addAddress('gguicido.viana@gmail.com'); // emaio que vai recerber as informação(destinatario)
+$mail->Subject = "COTAÇÃO RECEBIDA ! 🚛";// titulo do email (assunto)
 // abaixo contem o corpo do email com as informações 
-$conteudo_email = "<strong>voce recebeu um contato da empresa</strong> $nomeEmpresa <strong>E-mail:</strong:($emailContato):
+$conteudo_email = "<strong>Lanzara você acaba de receber uma cotação da empresa</strong> $nomeEmpresa <strong>E-mail:</strong:($emailContato):
 <br><br>
-<strong>CNPJ:</strong> $cnpjEmpresa.<br>
-<strong>Nome do Responsavel:</strong> $nomeResponsavel<br>
-<strong>Telefone de Contato:</strong> $telefoneContato <br>
-<strong>Peso da Carga:</strong> $PesoCarga <br>
-<strong>Tipo de Rota:</strong> $tipoRota <br>
-<strong>Classificação:</strong> $classificacao <br>
-<strong>Frequêcia:</strong> $frenquecia <br>
-<strong>Tipo de Produto:</strong> $produto <br>
-<strong>Data:</strong>  $data <br>
+<strong>CNPJ Remetente :</strong> $cnpjEmpresa.<br>
+<strong>CNPJ Destino :</strong> $cnpjdestino.<br>
+<strong>Nome do Responsavel :</strong> $nomeResponsavel<br>
+<strong>Telefone de Contato :</strong> $telefoneContato <br>
+<strong>Peso da Carga :</strong> $PesoCarga <br>
+<strong>Tipo de Rota :</strong> $tipoRota <br>
+<strong>valor aproximado da Nf-e :</strong> $Valor_produto <br>
+<strong>Classificação :</strong> $classificacao <br>
+<strong>Frequêcia :</strong> $frenquecia <br>
+<strong>Tipo de Produto :</strong> $produto <br>
+<strong>Classificação:</strong> $classificado <br>
+<strong>Data :</strong>  $data <br>
 ";
 $mail->isHTML(true);// informa que possui html
 $mail->Body = $conteudo_email; // coloca as infomaçoes no corpo do email 

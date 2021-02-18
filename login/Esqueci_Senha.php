@@ -26,20 +26,42 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-
-<script>
-    function funcao1(){
-   alert("senha redefinida com sucesso);
-    }
-    </script>
+<style>
+	.alerta {
+	padding: 25px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 10px;
+	font-size: 18px;
+}
+.error {
+	border-color: #e8273b;
+	color: #FFF;
+	background-color: #ed5565;
+	padding: 25px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 10px;
+	font-size: 18px;
+}
+.sucesso {
+	border-color: #87c940;
+	color: #FFF;
+	background-color: #a0d468;
+	padding: 25px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 10px;
+	font-size: 18px;
+}
+</style>
 </head>
 <body>
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100"" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100R">
 				<form class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+				
 					</span>
 
 				<br>
@@ -62,6 +84,10 @@
 							Registrar nova senha
 						</button>
 					</div>
+					<br>
+					<div class="sucesso">Senha atualizada com sucesso</div>
+					</div>
+					
 				</form>
 			</div>
 		</div>
@@ -69,6 +95,9 @@
 	
 
 	<div id="dropDownSelect1"></div>
+	<script>
+
+	</script>
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

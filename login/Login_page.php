@@ -28,15 +28,35 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
 </head>
+<style>
+	.painel-erro {
+		padding: 25px;
+		text-align: center;
+		border: 1px solid gray;
+		border-radius: 3px;
+		margin: 30px;
+		font-size: 18px;
+		border-color: #e8273b;
+		color: #FFF;
+		background-color: #ed5565;
+
+	}
+
+	#img {
+		margin-left: 30%;
+		margin-top: -30px;
+		width: 40%;
+	}
+</style>
 
 <body>
 
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('assets/img/lanzara_icon.png');">
+		<div class="container-login100"  style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
 				<form action="logar.php" method="POST" class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+					<img id="img"src="../assets/img/lanzara_icon.png">
+				
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">

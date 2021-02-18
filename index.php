@@ -76,7 +76,7 @@
                 </ul>
             </nav>
             <!-- .nav-menu -->
-            <a href="login/Login_page.php"><button class="btn btn-danger col-md-1" style="margin-left: 20px;" value="Login">Login</a>
+            <button onclick="redirecionar()" class="btn btn-danger col-md-1" style="margin-left: 20px;" value="Login">Login</a>
 
         </div>
     </header>
@@ -331,28 +331,33 @@
                         <form method="post" action="envia_email.php" role="form" class="php-email-form">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="name">Nome da Empresa </label>
-                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <label for="name">Razão social </label>
+                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4" data-msg="Digite o nome da sua empresa" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">CNPJ da Empresa </label>
-                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4" data-msg="Digite um CNPJ válido" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="name">Nome do Responsavel</label>
-                                    <input type="text" class="form-control" name="nomeResponsavel nome" id="nomeResponsavel" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                                    <label for="name">CNPJ do Destino </label>
+                                    <input type="text" name="cnpjdestino" class="form-control cnpj" id="cnpjdestino" data-rule="minlen:4" data-msg="Digite um CNPJ válido" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="name">Nome do Solicitante</label>
+                                    <input type="text" class="form-control" name="nomeResponsavel nome" id="nomeResponsavel" data-rule="minlen:4" data-msg="Por favor informar o nome para que possamos entrar em contato" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">E-mail de contato</label>
-                                    <input type="email" class="form-control" name="emailContato" id="emailContato" data-rule="email" data-msg="Please enter a valid email" />
+                                    <input type="email" class="form-control" name="emailContato" id="emailContato" data-rule="email" data-msg="Por favor entre com um email válido" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Telefone de contato</label>
-                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Please enter a valid email" />
+                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Preencha seu telefone" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -369,17 +374,16 @@
                                     <select class="form-control form-select-lg mb-6" name="tipoRota">
                                         <option selected>Selecione o tipo de rota desejada </option>
                                         <option value="1">Rota única</option>
-                                        <option value="1">Múltiplas rotas</option>
+                                        <option value="2">Múltiplas rotas</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="name">Classificação</label>
+                                    <label for="name">Selecione o tipo de rota desejada </label>
                                     <select class="form-control form-select-lg mb-6" name="classificacao">
-                                        <option selected>Selecione o tipo de rota desejada </option>
                                         <option value="1">Rota única</option>
-                                        <option value="1">Múltiplas rotas</option>
+                                        <option value="2">Múltiplas rotas</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
@@ -388,35 +392,44 @@
                                     <select class="form-control form-select-lg mb-3" name="frenquecia">
                                         <option selected>Selecione o tipo de rota desejada </option>
                                         <option value="1">Esporadicas</option>
-                                        <option value="1">Até três vezes na semana</option>
-                                        <option value="1">Pelo menos uma vez na</option>
-
+                                        <option value="2">Até três vezes na semana</option>
+                                        <option value="3">Pelo menos uma vez na</option>
                                     </select>
+                                    <div class="validate"></div>
+                                </div>
+                                   <div class="form-group col-md-12">
+                                    <label for="name">Valor da mercadoria</label>
+                                    <input type="text" class="form-control" name="Valor_produto" id="Valor_produto" data-rule="minlen:4" data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual o valor aproximado do produto que será transportado ?" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de produto</label>
-                                    <input type="text" class="form-control" name="produto" id="email" data-rule="minlen:4" data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual produto será transportado ?" />
+                                    <input type="text" class="form-control" name="produto" id="produta" data-rule="minlen:4" data-msg="Preencha o tipo de produto que será transportado" placeholder="Qual produto será transportado ?" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="name">Classificação</label>
+                                    <input type="text" class="form-control" name="classificado" id="classificado" data-rule="minlen:4" placeholder="informar número de ONU e número de risco?" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="text-center"><button type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
                             <div class="mb-6">
                                 <div class="loading">Por gentileza aguarde</div>
-                                <div class="error-message">Erro ao  Enviar a cotação</div>
-                                </div>
+                                <div class="error-message">Erro ao Enviar a cotação</div>
+                            </div>
                             <?php if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
 
                                 <div class="mb-6">
-                                <div class="loading">Por gentileza aguarde</div>
-                                <div class="error-message">Erro ao  Enviar a cotação</div>
+                                    <div class="loading">Por gentileza aguarde</div>
+                                    <div class="error-message">Erro ao Enviar a cotação</div>
                                 </div>
 
                             <?php } else if (isset($_GET["sucess"]) && $_GET["sucess"] == 1) { ?>
 
                                 <div class="mb-6">
-                                <div class="loading">Por gentileza aguarde</div>
-                                <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
+                                    <div class="loading">Por gentileza aguarde</div>
+                                    <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
                                 </div>
                             <?php } ?>
 
@@ -500,10 +513,11 @@
     <script src="assets/vendor/venobox/venobox.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.mask.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
     <script>
         jQuery(document).ready(function() {
-            $('.nome').mask('A', {
+            $('#nomeResponsavel').mask('A', {
                 translation: {
                     A: {
                         pattern: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$/g,
@@ -511,14 +525,34 @@
                     },
                 },
             });
-            $('.cnpj').mask('000.000.000-00', {
+            $('#cnpjEmpresa').mask('000.000.000-00', {
                 reverse: true
             });
-            $('.money2').mask("000", {
+            $('#cnpjdestino').mask('000.000.000-00', {
                 reverse: true
             });
-            $('.telefone').mask("(00)00000-0000")
-        })
+            $('.date').mask('00/00/0000');
+            $('.time').mask('00:00:00');
+            $('.date_time').mask('00/00/0000 00:00:00');
+            $('#telefoneContato').mask('(00) 00000-0000');
+            $('.phone_us').mask('(000) 000-0000');
+            $('.mixed').mask('AAA 000-S0S');
+            $('.cpf').mask('000.000.000-00', {
+                reverse: true
+            });
+            $('.cnpj').mask('00.000.000/0000-00', {
+                reverse: true
+            });
+            $('#Valor_produto').mask('000.000.000.000.000,00', {
+                reverse: true
+            });
+        });
+
+        Login_page
+
+        function redirecionar() {
+            window.location.href = "http://localhost/Lanzara/trunk/login/Login_page.php";
+        }
     </script>
 </body>
 
