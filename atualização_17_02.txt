@@ -1,0 +1,15 @@
+Atualizção de 17/02/2021
+
+1- codigo do formulario funcionando e configurado para o yahoo.com, 
+precisa colocar o email e senha do Lazara para ele receber os email.
+
+2- desevolver uma menssagem para quando o email foi eniado ou nao.
+
+3- likar o botao logi com a tela de login.
+
+4 - Nao existe a função grvar senha, discutir sobre isso 
+
+5- cria uma tela para poder visualizar os anexo apos ser upado.
+
+6 - colocar mascara nos campos do form.
+ 
