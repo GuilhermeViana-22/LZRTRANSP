@@ -35,6 +35,18 @@
   ======================================================== -->
 </head>
 
+
+<?php
+$PesoCarga = array(
+    "" => "----Selecione----",
+    "_0_a3.9_toneladas" => "_a_3.9_toneladas",
+    "_0_a3.9_toneladas" => "_4_a_14_toneladas",
+    "_0_a3.9_toneladas" => "_4_a_14_oneladas",
+    "_0_a3.9_toneladas" => "_14_a_20_toneladas",
+
+);
+?>
+
 <body>
 
     <!-- ======= Top Bar ======= -->
@@ -360,21 +372,24 @@
                                     <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Preencha seu telefone" />
                                     <div class="validate"></div>
                                 </div>
+
+                            
                                 <div class="form-group col-md-12">
                                     <label>Peso da carga</label>
                                     <select class="form-control form-select-lg mb-3" name="PesoCarga">
                                         <option selected>Selecione o peso estimado </option>
-                                        <option value="1">0 a 3,9 toneladas</option>
-                                        <option value="2">de 4 a 14 toneladas</option>
-                                        <option value="3">de 14 a 20 toneladas</option>
+                                        <option value="0 a 3,9 toneladas">0 a 3,9 toneladas</option>
+                                        <option value="de 4 a 14 toneladas">de 4 a 14 toneladas</option>
+                                        <option value="de 14 a 20 toneladas">de 14 a 20 toneladas</option>
                                     </select>
+                            
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de Carga</label>
                                     <select class="form-control form-select-lg mb-6" name="tipoCarga">
-                                  
-                                        <option value="1">Lotação</option>
-                                        <option value="2">fracionada</option>
+
+                                        <option value="Lotacao">Lotação</option>
+                                        <option value="Fracionada">fracionada</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
@@ -382,8 +397,8 @@
                                 <div class="form-group col-md-12">
                                     <label for="name">Selecione o tipo de rota desejada </label>
                                     <select class="form-control form-select-lg mb-6" name="tipoRota">
-                                        <option value="1">Rota única</option>
-                                        <option value="2">Múltiplas rotas</option>
+                                        <option value="Rota única">Rota única</option>
+                                        <option value="Múltiplas rotas">Múltiplas rotas</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
@@ -391,9 +406,9 @@
                                     <label for="name">Frequência de Cargas</label>
                                     <select class="form-control form-select-lg mb-3" name="frenquecia">
                                         <option selected>Selecione o tipo de rota desejada </option>
-                                        <option value="1">Esporadicas</option>
-                                        <option value="2">Até três vezes na semana</option>
-                                        <option value="3">Pelo menos uma vez na</option>
+                                        <option value="Esporadicas">Esporadicas</option>
+                                        <option value="Até três vezes na semana<">Até três vezes na semana</option>
+                                        <option value="Pelo menos uma vez na semana">Pelo menos uma vez na semana</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
@@ -430,15 +445,10 @@
                                 <div class="mb-6">
                                     <div class="loading">Por gentileza aguarde</div>
                                     <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
+                                    
                                 </div>
                             <?php } ?>
-
-                            <!--  <div class="mb-6">
-                                <div class="loading">Por gentileza aguarde</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
-                            </div>-->
-
+                            
                         </form>
                     </div>
                 </div>
@@ -495,7 +505,7 @@
                 document.write(new Date().getFullYear());
             </script>
 
-      
+
     </footer>
     <!-- End Footer -->
 
@@ -551,8 +561,6 @@
         function redirecionar() {
             window.location.href = "http://localhost/Lanzara/trunk/login/Login_page.php";
         }
-
-       
     </script>
 </body>
 
