@@ -35,18 +35,6 @@
   ======================================================== -->
 </head>
 
-
-<?php
-$PesoCarga = array(
-    "" => "----Selecione----",
-    "_0_a3.9_toneladas" => "_a_3.9_toneladas",
-    "_0_a3.9_toneladas" => "_4_a_14_toneladas",
-    "_0_a3.9_toneladas" => "_4_a_14_oneladas",
-    "_0_a3.9_toneladas" => "_14_a_20_toneladas",
-
-);
-?>
-
 <body>
 
     <!-- ======= Top Bar ======= -->
@@ -341,6 +329,7 @@ $PesoCarga = array(
 
                     <div id="fomulario" class="col-flex align-items-center">
                         <form method="post" action="envia_email.php" role="form" class="php-email-form">
+
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="name">Razão social </label>
@@ -373,7 +362,7 @@ $PesoCarga = array(
                                     <div class="validate"></div>
                                 </div>
 
-                            
+
                                 <div class="form-group col-md-12">
                                     <label>Peso da carga</label>
                                     <select class="form-control form-select-lg mb-3" name="PesoCarga">
@@ -382,7 +371,7 @@ $PesoCarga = array(
                                         <option value="de 4 a 14 toneladas">de 4 a 14 toneladas</option>
                                         <option value="de 14 a 20 toneladas">de 14 a 20 toneladas</option>
                                     </select>
-                            
+
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de Carga</label>
@@ -428,9 +417,12 @@ $PesoCarga = array(
                                     <div class="validate"></div>
                                 </div>
                             </div>
-                            <div class="text-center"><button type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
+                            <div class="text-center"><button id="btn" type="submit" onclick="redirect()" class="col-md-7"><strong>Enviar</strong></button></div>
+
+
                             <div class="mb-6">
                                 <div class="loading">Por gentileza aguarde</div>
+
                                 <div class="error-message">Erro ao Enviar a cotação</div>
                             </div>
                             <?php if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
@@ -445,11 +437,13 @@ $PesoCarga = array(
                                 <div class="mb-6">
                                     <div class="loading">Por gentileza aguarde</div>
                                     <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
-                                    
+
                                 </div>
+
                             <?php } ?>
-                            
+
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -504,6 +498,13 @@ $PesoCarga = array(
             <script type="text/javascript">
                 document.write(new Date().getFullYear());
             </script>
+            <Script>
+                function redirect() {
+                    window.open(alert("Sua mensagem foi enviada com sucesso"), "width=800,height=600,left=" + (document.documentElement.clientWidth - 800) / 2 + ",top=" + (document.documentElement.clientHeight - 600) / 2);
+                    window.location = "index.php";
+                };
+            </Script>
+
 
 
     </footer>
