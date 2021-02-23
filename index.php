@@ -333,32 +333,32 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="name">Razão social </label>
-                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4" data-msg="Digite o nome da sua empresa" />
+                                    <input type="text" name="nameEmpresa" class="form-control " id="nameEmpresa" data-rule="minlen:4" data-msg="Digite o nome da sua empresa" placeholder="Digite o Nome da Empresa/ Compania." />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">CNPJ da Empresa </label>
-                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4" data-msg="Digite um CNPJ válido" />
+                                    <input type="text" name="cnpjEmpresa" class="form-control cnpj" id="cnpjEmpresa" data-rule="minlen:4" data-msg="Digite um CNPJ válido" placeholder="Digite o CNPJ de destino" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">CNPJ do Destino </label>
-                                    <input type="text" name="cnpjdestino" class="form-control cnpj" id="cnpjdestino" data-rule="minlen:4" data-msg="Digite um CNPJ válido" />
+                                    <input type="text" name="cnpjdestino" class="form-control cnpj" id="cnpjdestino" data-rule="minlen:4" data-msg="Digite um CNPJ válido" placeholder="Digite o CNPJ de destino" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Nome do Solicitante</label>
-                                    <input type="text" class="form-control" name="nomeResponsavel" id="nomeResponsavel" data-rule="minlen:4" data-msg="Por favor informar o nome para que possamos entrar em contato" />
+                                    <input type="text" class="form-control" name="nomeResponsavel" id="nomeResponsavel" data-rule="minlen:4" data-msg="Por favor informar o nome para que possamos entrar em contato" placeholder="Digite o nome para contato" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">E-mail de contato</label>
-                                    <input type="email" class="form-control" name="emailContato" id="emailContato" data-rule="email" data-msg="Por favor entre com um email válido" />
+                                    <input type="email" class="form-control" name="emailContato" id="emailContato" data-rule="email" data-msg="Por favor entre com um email válido" placeholder="Digite o e-mail para contato" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Telefone de contato</label>
-                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Preencha seu telefone" />
+                                    <input type="text" class="form-control " name="telefoneContato" id="telefoneContato" data-rule="minlen:4" data-msg="Preencha seu telefone" placeholder="Digite o telefone para contato" />
                                     <div class="validate"></div>
                                 </div>
 
@@ -366,7 +366,7 @@
                                 <div class="form-group col-md-12">
                                     <label>Peso da carga</label>
                                     <select class="form-control form-select-lg mb-3" name="PesoCarga">
-                                        <option selected>Selecione o peso estimado </option>
+                                        <option selected>---- Selecione o peso estimado ---- </option>
                                         <option value="0 a 3,9 toneladas">0 a 3,9 toneladas</option>
                                         <option value="de 4 a 14 toneladas">de 4 a 14 toneladas</option>
                                         <option value="de 14 a 20 toneladas">de 14 a 20 toneladas</option>
@@ -376,7 +376,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="name">Tipo de Carga</label>
                                     <select class="form-control form-select-lg mb-6" name="tipoCarga">
-
+                                        <option selected>---- selecione o tipo de Carga ---- </option>
                                         <option value="Lotacao">Lotação</option>
                                         <option value="Fracionada">fracionada</option>
                                     </select>
@@ -386,6 +386,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="name">Selecione o tipo de rota desejada </label>
                                     <select class="form-control form-select-lg mb-6" name="tipoRota">
+                                        <option selected>---- selecione o tipo de Rota ---- </option>
                                         <option value="Rota única">Rota única</option>
                                         <option value="Múltiplas rotas">Múltiplas rotas</option>
                                     </select>
@@ -413,7 +414,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="name">Classificação</label>
-                                    <input type="text" class="form-control" name="classificacao" id="classificacao" data-rule="minlen:4" placeholder="informar número de ONU e número de risco?" />
+                                    <input type="text" class="form-control" name="classificacao" id="classificacao" data-rule="minlen:4" data-msg="informar número de ONU e número de risco" placeholder="Qual o número de ONU e número de risco?" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
@@ -421,26 +422,18 @@
 
 
                             <div class="mb-6">
-                                <div class="loading">Por gentileza aguarde</div>
+                                <!--<div class="">Por gentileza aguarde</div>-->
 
                                 <div class="error-message">Erro ao Enviar a cotação</div>
+
+                                <?php if (isset($_GET["sucess"]) && $_GET["sucesso"] == 1) { ?>
+
+                                    <div class="error-message">Cotação enviada</div> 
+
+                                <?php } ?>
+
                             </div>
-                            <?php if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
 
-                                <div class="mb-6">
-                                    <div class="loading">Por gentileza aguarde</div>
-                                    <div class="error-message">Erro ao Enviar a cotação</div>
-                                </div>
-
-                            <?php } else if (isset($_GET["sucess"]) && $_GET["sucess"] == 1) { ?>
-
-                                <div class="mb-6">
-                                    <div class="loading">Por gentileza aguarde</div>
-                                    <div class="sent-message">Sua cotação foi enviada. Muito obrigado !</div>
-
-                                </div>
-
-                            <?php } ?>
 
                         </form>
 
@@ -500,8 +493,13 @@
             </script>
             <Script>
                 function redirect() {
-                    window.open(alert("Sua mensagem foi enviada com sucesso"), "width=800,height=600,left=" + (document.documentElement.clientWidth - 800) / 2 + ",top=" + (document.documentElement.clientHeight - 600) / 2);
-                    window.location = "index.php";
+                   // window.open(alert("Sua mensagem foi enviada com sucesso"), "width=800,height=600,left=" + (document.documentElement.clientWidth - 800) / 2 + ",top=" + (document.documentElement.clientHeight - 600) / 2);
+                    var c = confirm("Para completa o envio aperte 'OK' ");
+                    if (c == true) {
+                        alert("Cotação Enviada");
+                        window.location = "index.php";
+                    }
+
                 };
             </Script>
 
