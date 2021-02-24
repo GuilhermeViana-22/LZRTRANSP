@@ -418,23 +418,13 @@
                                     <div class="validate"></div>
                                 </div>
                             </div>
-                            <div class="text-center"><button id="btn" type="submit" onclick="redirect()" class="col-md-7"><strong>Enviar</strong></button></div>
-
-
-                            <div class="mb-6">
-                                <!--<div class="">Por gentileza aguarde</div>-->
-
-                                <div class="error-message">Erro ao Enviar a cotação</div>
-
-                                <?php if (isset($_GET["sucess"]) && $_GET["sucesso"] == 1) { ?>
-
-                                    <div class="error-message">Cotação enviada</div> 
-
-                                <?php } ?>
+                            <div class="text-center"><button id="btn" type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
+                            <div class="my-3">
+                               
+                                    <div class="loading">Por gentileza aguarde</div>
+                                <div class="error-message">Cotação enviada</div>
 
                             </div>
-
-
                         </form>
 
                     </div>
@@ -491,24 +481,13 @@
             <script type="text/javascript">
                 document.write(new Date().getFullYear());
             </script>
-            <Script>
-                function redirect() {
-                   // window.open(alert("Sua mensagem foi enviada com sucesso"), "width=800,height=600,left=" + (document.documentElement.clientWidth - 800) / 2 + ",top=" + (document.documentElement.clientHeight - 600) / 2);
-                    var c = confirm("Para completa o envio aperte 'OK' ");
-                    if (c == true) {
-                        alert("Cotação Enviada");
-                        window.location = "index.php";
-                    }
-
-                };
-            </Script>
-
+           
 
 
     </footer>
-    <!-- End Footer -->
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <!-- End Footer <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="icofont-simple-up"></i></a>
+    
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -519,7 +498,7 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/venobox/venobox.min.js"></script>
 
-    <!-- Template Main JS File -->
+    <!-- chamativa dos metodos para mascara -->
     <script src="assets/js/jquery.mask.js"></script>
     <script src="assets/js/jquery.mask.min.js"></script>
     <script>

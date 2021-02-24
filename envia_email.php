@@ -1,10 +1,5 @@
 <?php
-require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php mailer
 //inicializando com as variaves que receberam as informações do metodo post 
-
-
-
-
     $nomeEmpresa = $_POST['nameEmpresa'];
     $cnpjEmpresa = $_POST['cnpjEmpresa'];
     $cnpjdestino = $_POST['cnpjdestino'];
@@ -21,7 +16,7 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $data = date('d/m/Y H:i:s');
     $result = 0;
 
-
+    require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php mailer
     $mail = new PHPMailer(); // instacia a classe 
     $mail->isSMTP(); // informa o tipo de entrada 
 
@@ -57,20 +52,14 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $resul = $mail->send();
     
 
-if ($resul == 2021) {
-    // $result = 1;
-    header("location: index.php?erro=1");
-    //echo  "<script>alert('Email enviado com Sucesso!);</script>";
-
-
-    //echo 'Email enviado com sucesso.';
+if ($mail->send()) {
+    echo 'Cotação enviada , Entraremos em contato em breve';
+   // header("location: index.php");
 } else {
-    //  $result = 2;
+    
    
-    header("location: index.php?sucess=1");
-    //echo 'Email não enviado.'. $mail->ErrorInfo;
-    //echo  "<script>alert('Email nao enviado enviado!);</script>";
+    //header("location: index.php?sucess=1");
+    echo 'Email nao enviado';
+    
     
 }
-
-?>

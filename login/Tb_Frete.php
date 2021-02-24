@@ -26,53 +26,8 @@
 
                 <div class="container-fluid">
                     <div class="card">
-                        <?php if (isset($_GET["sucesso"])) { ?>
-
-                            <div class="alert alert-success">
-                                <?php
-                                # esse numero 1 refere-se a mensagem de sucesso exibida  no inicio da tela
-                                # se o if ficar atrelado ao primeiro laço ele estará no laço de inserir referenciado no 
-                                # crud_cliente
-                                # logo ele retorna a mensagem de cliente inserido com sucsso
-                                if ($_GET["sucesso"] == 1) {
-                                    echo "Cliente inserido com sucesso!";
-                                    # esse numero 2 refere-se a mensagem de sucesso exibida  no inicio da tela
-                                    # se o if ficar atrelado ao segundo laço ele estará no laço de atualizar que esta referenciado no 
-                                    # crud_cliente
-                                    # logo ele retorna a mensagem de cliente inserido com sucsso
-                                } else if ($_GET["sucesso"] == 2) {
-                                    echo "Cliente atualizado com sucesso!";
-                                } else {
-                                    echo "Cliente excluído com sucesso!";
-                                }
-                                ?>
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if (isset($_GET["erro"])) { ?>
-                            <div class="alert alert-danger">
-                                <?php
-                                if ($_GET["erro"] == 1) {
-                                    echo "Erro ao inserir cliente!";
-                                } else if ($_GET["erro"] == 2) {
-                                    echo "Erro ao atualizar cliente!";
-                                } else {
-                                    echo "Erro ao excluir cliente   !";
-                                }
-                                ?>
-                            </div>
-                        <?php } ?>
-                        <form id="formExemplo" method="post" action="" data-toggle="validator" role="form">
-                            <?php
-                            $dados;
-                            if (isset($_GET["id_cliente"])) {
-
-                                $queryCliente = $conexao->query("SELECT * FROM cliente WHERE id_cliente = " . $_GET["id_cliente"]);
-                                $dados = $queryCliente->fetch_assoc();
-                            ?>
-                                <input type="hidden" name="id_cliente" value="<?php echo $_GET["id_cliente"]; ?>" />
-                            <?php } ?>
+                       
+                        <form id="tbl_frete" name="frete" data-toggle="validator" role="form">
                             <div class="card-header">
                                 <h3 class="text-center font-weight-light my-4">Tabela de Frete</h3>
                             </div>
@@ -189,13 +144,15 @@
 
                                     <div class="card-body mr-1">
 
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" name="tblfrete" id="tbfrete">
 
                                             <tr>
                                                 <th rowspan="2">Tipo de Carga</th>
                                                 <th rowspan="2">Coeficiente de Custo</th>
                                                 <th rowspan="2">Unidade</th>
-                                                <th colspan="7">Quantidade de eixo</th>
+                                                <th colspan="6">Numeros de eixos da composição veicular </th>
+                                                <th>Ações</th>
+
 
 
                                             </tr>
@@ -228,6 +185,33 @@
 
                                             </tr>
                                             <tr>
+                                                <td rowspan="2">
+                                                    Granel Sólido
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
                                                 <td>
                                                     <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
                                                                                         ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
@@ -239,7 +223,793 @@
                                                                                                     ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
 
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Granel Liquido
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Frigrorificada
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Conteineirizada
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Carga Geral
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    NeoGranel
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Perigosa (Granel Sólido)
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Perigosa (Granel Liquido)
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Perigosa (Frigrorificada)
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Perigosa (Conteineirizada)
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    Perigosa (Carga Geral)
+                                                </td>
+                                                <td>
+                                                    Deslocamento(CCD)
+                                                </td>
+                                                <td>
+                                                    RS/KM
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Carga e Descarga(CC)
+                                                </td>
+                                                <td>
+                                                    RS
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    valores
+                                                </td>
+                                                <td>
+                                                    <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                        ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                                    &nbsp;&nbsp;
+
+
+
+                                                    <a href="crud_cliente.php?excluir=1&id_cliente=<?php //echo $dados["id_cliente"]; 
+                                                                                                    ?>" class="btn btn-danger btn-excluir-cliente"><i class="fas fa-times"></i></a>
+                                                </td>
+                                            </tr>
                                             <?php //} 
                                             ?>
 
@@ -273,4 +1043,5 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
 </body>
+
 </html>

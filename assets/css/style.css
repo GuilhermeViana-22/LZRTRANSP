@@ -760,12 +760,14 @@ p {
     font-size: 24px;
     font-weight: 400;
     color: #e02f3e;
-    font-weight:bolder;
-    text-decoration:none !important
+    font-weight: bolder;
+    text-decoration: none !important
 }
+
 .why-us .valores:hover {
     color: #ffffff;
-    }
+}
+
 .why-us .content-item h4 {
     font-size: 26px;
     font-weight: 300;
@@ -1545,16 +1547,18 @@ p {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 .sucesso {
-	border-color: #87c940;
-	color: #FFF;
-	background-color: #a0d468;
-	padding: 25px;
-	border: 1px solid gray;
-	border-radius: 3px;
-	margin: 10px;
-	font-size: 18px;
+    border-color: #87c940;
+    color: #FFF;
+    background-color: #a0d468;
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin: 10px;
+    font-size: 18px;
 }
+
 #footer {
     background-image: url("../img/footer-background.jpg");
     color: #fff;
@@ -1612,13 +1616,15 @@ p {
 #footer .credits {
     font-size: 13px;
 }
-.info{
-        height: 10em;
-        display: flex;
-        align-items: center;
-        justify-content: center; 
-    }
-    #icon{
-        color: #e02f3e;
-        font-size: 20pt;
-    }
+
+.info {
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon {
+    color: #e02f3e;
+    font-size: 20pt;
+}
