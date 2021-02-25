@@ -1,60 +1,17 @@
 <?php
 include 'banco.php';
 
-if (isset($_Post["ok"])) {
-	$email = $mysqli->escape_String($_POST["email"]);
-	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		$err0[] = "email invalido";
-	}
-	$sql_code = "SELECT email, id_funcionario FROM funcionario WHERE email = '$email'";
-	$sql_query = $mysqli->query($sql_code) or die($mysqli->erro);
-	$dados = $sql_query->fetch_assoc();
-	$total = $sql_query->num_rowns;
-	if ($total == 0) {
-		$err0[] = "email nao existe na base de dados ";
-	}
-	if (count($erro) == 0 && $total > 0) {
-		$nova_Senha = substr((md5(time())), 0, 6);
-		$novaSenha_criptografada = md5(md5($nova_Senha));
-
-		require 'PHPMailer/PHPMailerAutoload.php';
-		$mail = new PHPMailer(); // instacia a classe 
-		$mail->isSMTP(); // informa o tipo de entrada 
-
-		$mail->Host = "smtp.gmail.com"; // smtp do gmail: gmail.com
-		$mail->Port = 587; //porta do gmail 587; porta do yahoo 465
-		$mail->SMTPSecure = "tls"; // informa que o email é seguro 
-		$mail->SMTPAuth = true; // e informa que o emaio é verificado
-		$mail->Username = "Elton13cdz@gmail.com"; // email do destinatario
-		$mail->Password = "justino123456"; // senha do destinatrio de acesso ao email
-
-		$mail->setFrom($mail->Username, $nomeEmpresa); // iforma o remetente 
-		$mail->addAddress('Elton13cdz@gmail.com'); // emaio que vai recerber as informação(destinatario)
-		$mail->Subject = "Nova Senha"; // titulo do email (assunto)
-		// abaixo contem o corpo do email com as informações 
-		$conteudo_email = "<strong>Sua nova Senha de Acesso é :</strong>" . $nova_Senha;
-		$mail->isHTML(true); // informa que possui html
-		$mail->Body = $conteudo_email; // coloca as infomaçoes no corpo do email 
-		if ($mail->send()) {
-			$sql_code = "UPDATE funcionario SET senha = $novaSenha_criptografada where Email = $email ";
-			$sql_query = $mysqli->query($sql_code) or die($mysqli->erro);
-		}
-	}
-}
-
-
-
-
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-	<title>Login V3</title>
+	<title>LZR-SGB Atualizar Senha</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/lanzara_icon.png" />
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 	<!--===============================================================================================-->
@@ -120,93 +77,88 @@ if (isset($_Post["ok"])) {
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100R">
-				<form class="login100-form validate-form" method="Post" action="Esqueci_Senha.php">
+				<form class="login100-form validate-form" method="Post" action="atualiza_senha.php">
 
 					</span>
 
 					<br>
 					<span class="login100-form-title p-b-34 p-t-27">
-						Recuperação de senha
+						Atualizar senha
 					</span>
 					<br>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter username">
-						<input class="input100" type="text" name="email" value="<?php echo $_POST['email'] ?>" placeholder="Digite sua nova senha">
+						<input class="input100" type="text" name="email" placeholder="Digite seu e-mail">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
-
-					<!--<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="repetir a sua nova senha">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>-->
 					<div class="container-login100-form-btn">
-						<button type="submit" name="ok" class="login100-form-btn">
-							Registrar nova senha
+						<button type="submit" name="localizar" class="login100-form-btn">
+							Localizar
 						</button>
 					</div>
 					<br>
-					<?php
 
 
-					?>
-				</form>
-				<?php if (isset($_GET["sucesso"]) && $_GET["sucesso"] == 2) { ?>
-					<br>
-					<div class="alert alert-success">
-						<?php
-						echo "Altualizada com Sucesso!";
-						?>
-					</div>
-				<?php } else if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
-
-					<div class="alert alert-danger">
-						<?php
-						echo "Erro ao atualizar";
-						?>
-					</div>
-				<?php } ?>
-				<?php if (isset($_GET["sucesso"]) && $_GET["sucesso"] == 1) { ?>
-
-					<form class="login100-form validate-form" method="Post" action="Esqueci_Senha.php">
-
-
-						<div class="wrap-input100 validate-input" data-validate="Enter username">
-							<input class="input100" type="text" name="email" value="<?php echo $_POST['email'] ?>" placeholder="Digite sua nova senha">
-							<span class="focus-input100" data-placeholder="&#xf207;"></span>
-						</div>
-
-						<!--<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="repetir a sua nova senha">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>-->
-						<div class="container-login100-form-btn">
-							<button type="submit" name="ok" class="login100-form-btn">
-								Registrar nova senha
-							</button>
-						</div>
+					<?php if (isset($_GET["sucesso"]) && $_GET["sucesso"] == 2) { ?>
 						<br>
-						<?php
+						<div class="alert alert-success">
+							<?php
+							echo "Altualizada com Sucesso!";
+							?>
+						</div>
+					<?php } else if (isset($_GET["erro"]) && $_GET["erro"] == 2) { ?>
+
+						<div class="alert alert-danger">
+							<?php
+							echo "Erro ao atualizar";
+							?>
+						</div>
+					<?php } ?>
+					<?php if (isset($_GET["sucesso"]) && $_GET["sucesso"] == 1) { ?>
+
+						<form class="login100-form validate-form" method="Post" action="atualiza_senha.php">
+							<div class="wrap-input100 validate-input" data-validate="Enter password">
+								<input class="input100" type="password" id="nsenha" name="nsenha" placeholder="repetir a sua nova senha">
+								<span class="focus-input100" data-placeholder="&#xf191;"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Enter password">
+								<input class="input100" type="password" name="csenha" placeholder="repetir a sua nova senha">
+								<span class="focus-input100" data-placeholder="&#xf191;"></span>
+							</div>
+							<div class="container-login100-form-btn">
+								<button type="submit" name="atualizar" class="login100-form-btn">
+									Registrar nova senha
+								</button>
+							</div>
+							<br>
 
 
-						?>
-					</form>
-				<?php } else if (isset($_GET["erroloc"]) && $_GET["erroloc"] == 1) { ?>
-					<div class="alert alert-danger col-md-6">
-						<?php
 
-						echo "Não localizado!";
+						</form>
+					<?php } else if (isset($_GET["erroloc"]) && $_GET["erroloc"] == 1) { ?>
+						<div class="alert alert-danger col-md-6">
+							<?php
 
-						?>
+							echo "Não localizado!";
+
+							?>
+						</div>
+					<?php } else if (isset($_GET["erro"]) && $_GET["erro"] == 3) { ?>
+						<div class="alert alert-danger col-md-6">
+							<?php
+
+							echo "Verifique se as senha são identicas !";
+
+							?>
+						</div>
+					<?php } ?>
+
+					<div class="text-center p-t-90">
+						<a class="txt1" href="Login_page.php">
+							Fazer login
+						</a>
 					</div>
-				<?php } else if (isset($_GET["erro"]) && $_GET["erro"] == 3) { ?>
-					<div class="alert alert-danger col-md-6">
-						<?php
-
-						echo "Verifique se as senha são identicas !";
-
-						?>
-					</div>
-				<?php } ?>
+				</form><!--  -->
 			</div>
 
 
@@ -216,13 +168,11 @@ if (isset($_Post["ok"])) {
 
 		</div>
 	</div>
-	</div>
+
 
 
 	<div id="dropDownSelect1"></div>
-	<script>
-
-	</script>
+	
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

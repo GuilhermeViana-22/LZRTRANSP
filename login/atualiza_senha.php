@@ -3,32 +3,36 @@ include 'banco.php';
 if (isset($_POST["localizar"])) {
 $email = $_POST['email'];
 $cpf = $_POST['cpf'];
-$query = $conexao->query("SELECT * FROM funcionario WHERE email = '" . $email . "' AND cpf = '" . $cpf . "'");
+$query = $conexao->query("SELECT * FROM funcionario WHERE cpf = '" . $cpf . "'");
     
     if($query->num_rows > 0) {
         
     
-        header("Location: recupera_senha.php?sucesso=1");
+        header("Location: Esqueci_Senha.php?sucesso=1");
     
     } else {
     
-        header("Location: recupera_senha.php?erroloc=1");
+        header("Location: Esqueci_Senha.php?erroloc=1");
     
     }
 }
 
 if (isset($_POST["atualizar"])) {
                                                
-    $email = $_POST['email'];
+    //$email = $_POST['email'];
     $cpf = $_POST['cpf'];
-    $sql = "update funcionario set senha = '$_POST[nsenha]' where cpf = '$_POST[cpf]' and email = '$_POST[email]'";
-    $resul = $conexao->query($sql);
+    $nsenha = $_POST['nsenha'];
+    $sql = "UPDATE funcionario set senha = '$_POST[nsenha]' where  cpf = '$_POST[cpf]'";
+   $resul = $conexao->query($sql);
+ //  var_dump($sql)
     $linhasAfetadas = $conexao->affected_rows;
     if ($linhasAfetadas > 0) {
+        header("Location: Esqueci_Senha.php?sucesso=2");
         mysqli_close($conexao);
-        header("Location: recupera_senha.php?sucesso=2");
+        
     } else { 
+        header("Location: Esqueci_Senha.php?erro=2");   
         mysqli_close($conexao);
-        header("Location: recupera_senha.php?erro=2");   
+        
     }
 } 

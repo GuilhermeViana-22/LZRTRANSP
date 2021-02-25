@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="images/lanzara_icon.png" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -52,15 +52,15 @@
 <body>
 
 	<div class="limiter">
-		<div class="container-login100"  style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
 				<form action="logar.php" method="POST" class="login100-form validate-form">
-					<img id="img"src="../assets/img/lanzara_icon.png">
-				
+					<img id="img" src="../assets/img/lanzara_icon.png">
+
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter username">
@@ -69,20 +69,20 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="senha" placeholder="Senha">
+						<input class="input100" type="password" id="pass" name="senha" placeholder="Senha">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
-
+					<!--
 					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="mostrarS">
 						<label class="label-checkbox100" for="ckb1">
-							lembrar senha
+							mostra senha
 						</label>
 					</div>
-
+-->
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Logar
+							Entrar
 						</button>
 					</div>
 					<?php if (isset($_GET["erro"]) && $_GET["erro"] == 1) { ?>
@@ -100,7 +100,7 @@
 
 					<div class="text-center p-t-90">
 						<a class="txt1" href="Esqueci_Senha.php">
-							Esqueci minha senha !
+							Esqueci minha senha
 						</a>
 					</div>
 				</form>
@@ -110,7 +110,7 @@
 
 
 	<div id="dropDownSelect1"></div>
-
+	<script src="js/Rsenha.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->

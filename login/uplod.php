@@ -5,7 +5,7 @@ Design a file upload element. Is it the loading screen and icon? A progress elem
 <html>
 
 <head>
-
+<link rel="icon" type="image/png" href="images/lanzara_icon.png" />
     <link href="css/cssup.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">

@@ -8,6 +8,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <title>Tabela de frete</title>
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/lanzara_icon.png" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
@@ -26,7 +27,7 @@
 
                 <div class="container-fluid">
                     <div class="card">
-                       
+
                         <form id="tbl_frete" name="frete" data-toggle="validator" role="form">
                             <div class="card-header">
                                 <h3 class="text-center font-weight-light my-4">Tabela de Frete</h3>
@@ -35,9 +36,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="small mb-2" for="textNome">Tipo de Carga</label>
-                                        <input class="form-control py-2 nome" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                            echo $dados["nome"];
-                                                                                        } ?>" id="textNome" type="text" placeholder="Digite o nome" name="nome" required />
+                                        <input class="form-control py-2 nome" id="textNome" type="text" placeholder="Digite o Tipo de Carga" name="tpcarga" />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -45,10 +44,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="small mb-2" for="inputLastName">Coeficiente de Custonome</label>
-                                        <input class="form-control py-2 nome" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                            #essa função do php pega o valor do input sobrenome
-                                                                                            echo $dados["sobrenome"];
-                                                                                        } ?>" id="inputLastName" type="text" placeholder="Digite o sobrenome" name="sobrenome" required />
+                                        <input class="form-control py-2 nome" id="inputLastName" type="text" placeholder="Digite o Coeficiente de Custo" name="coeCusto" />
 
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -56,20 +52,14 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="small mb-2" for="dtNasc">Unidade</label>
-                                        <input class="form-control py-2 nascimento" id="dtNasc" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                            #essa função do php pega o valor do input data de nascimento
-                                                                                                            echo $dados["dt_nascimento"];
-                                                                                                        } ?>" type="text" min="1950-01-01" max="2020-11-12" placeholder="Digite o nascimento" name="dt_nascimento" required />
+                                        <input class="form-control py-2 nascimento" id="dtNasc" type="text" min="1950-01-01" max="2020-11-12" placeholder="Digite a Unidade" name="unidade" />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="small mb-1" for="txtCpf">Eixo 2</label>
-                                        <input class="form-control py-2 cpf" id="txtCpf" type="text" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                                #essa função do php pega o valor do input cpf
-                                                                                                                echo $dados["cpf"];
-                                                                                                            } ?>" placeholder="Digite o CPF" name="cpf" required />
+                                        <input class="form-control py-2 cpf" id="txtCpf" type="text" placeholder="Digite o Eixo 2" name="txteixo2" required />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -77,47 +67,35 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="small mb-1" for="txtTelefone">Eixo 3</label>
-                                        <input class="form-control py-2 telefone" id="txtTelefone" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                                echo $dados["telefone"];
-                                                                                                            } ?>" type="text" placeholder="Digite o Telefone" name="telefone" required />
+                                        <input class="form-control py-2 telefone" id="txtTelefone" type="text" placeholder="Digite o Telefone" name="txteixo3" required />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="col-md-15">
                                         <label for="inputEmail" for="txtEmail" class="small md-3 ">Eixo 4</label>
-                                        <input type="email" class="form-control py-0" id="txtEmail" placeholder="E-mail" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                                                    echo $dados["email"];
-                                                                                                                                } ?>" name="email" required>
+                                        <input type="email" class="form-control py-0" id="txtEmail" placeholder="E-mail" name="txteixo4" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class=" col-md-3">
                                     <label for="cep" class="small col-md-3 mb-1">Eixo 5</label>
-                                    <input name="cep" type="text" placeholder="digite o CEP" class="form-control" id="cep" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                                                        echo $dados["cep"];
-                                                                                                                                    } ?>" onblur="pesquisacep(this.value);">
+                                    <input name="txteixo5" type="text" placeholder="digite o CEP" class="form-control" id="cep" txteixo3>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputAddress" class="small mb-1">Eixo 6</label>
-                                    <input value="<?php if (isset($_GET["id_cliente"])) {
-                                                        echo $dados["logradouro"];
-                                                    } ?>" type="text" class="form-control py-3" id="rua" placeholder="Rua dos Bobos, nº 0" name="logradouro">
+                                    <input type="text" class="form-control py-3" id="rua" placeholder="Rua dos Bobos, nº 0" name="txteixo6">
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputAddress2" class="small mb-1">Eixo 7</label>
-                                    <input type="text" class="form-control" id="inputAddress" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                            echo $dados["num_comp"];
-                                                                                                        } ?>" placeholder="Apartamento, hotel, casa, etc." name="num_comp">
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="Apartamento, hotel, casa, etc." name="txteixo7">
                                 </div>
 
                                 <div class="form-group col-md-3">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputLastName">9</label>
 
-                                        <input type="text" class="form-control" id="cidade" value="<?php if (isset($_GET["id_cliente"])) {
-                                                                                                        echo $dados["cidade"];
-                                                                                                    } ?>" placeholder="Digite a cidade." name="cidade" required>
+                                        <input type="text" class="form-control" id="cidade" placeholder="Digite a cidade." name="txteixo9" required>
 
 
 
@@ -129,7 +107,8 @@
 
                             <div id="botoes" class="col-md-9 col-xs-12">
                                 <div style="margin-left:460px;" class="col-md-15">
-                                    <button type="submit" class="btn btn-success"><i class="fas fa-paw"></i> Salvar</button>
+                                    <input type="button" value="teste" onclick="insetetb(tpcarga.value,coeCusto.value,unidade.value,txteixo2.value,txteixo3.value,txteixo4.value,txteixo5.value,txteixo6.value,txteixo7.value,txteixo9.value)">
+                                    <button type="button" class="btn btn-success"><i class="fas fa-paw"></i> Salvar</button>
                                 </div>
 
                             </div>
@@ -143,8 +122,28 @@
                                     </div>
 
                                     <div class="card-body mr-1">
-
                                         <table class="table table-bordered" name="tblfrete" id="tbfrete">
+                                            <thead>
+                                                <tr>
+                                                    <th>Linha</th>
+                                                    <th>Tipo de Carga</th>
+                                                    <th>Coeficiente de Custo</th>
+                                                    <th>Unidade</th>
+                                                    <th>eixo 2 </th>
+                                                    <th>eixo 3 </th>
+                                                    <th>eixo 4 </th>
+                                                    <th>eixo 5 </th>
+                                                    <th>eixo 6 </th>
+                                                    <th>eixo 7 </th>
+                                                    <th>eixo 9 </th>
+
+
+
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <!--<table class="table table-bordered" name="tblfrete" id="tbfrete">
 
                                             <tr>
                                                 <th rowspan="2">Tipo de Carga</th>
@@ -195,22 +194,22 @@
                                                     RS/KM
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
-                                                    valores
+                                                    
                                                 </td>
                                                 <td>
                                                     <a href="cad_cliente.php?id_cliente=<?php //echo $dados["id_cliente"]; 
@@ -1015,7 +1014,7 @@
 
 
 
-                                        </table>
+                                        </table>-->
                                     </div>
                                 </div>
 
@@ -1042,6 +1041,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
+    <script type="text/javascript" src="js/tabela_frete.js"></script>
 </body>
 
 </html>
