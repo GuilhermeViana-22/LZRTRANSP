@@ -420,9 +420,9 @@
                             </div>
                             <div class="text-center"><button id="btn" type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
                             <div class="my-3">
-                               
+                               <!--
                                     <div class="loading">Por gentileza aguarde</div>
-                                <div class="error-message">Cotação enviada</div>
+                                <div class="error-message">Cotação enviada</div>-->
 
                             </div>
                         </form>
