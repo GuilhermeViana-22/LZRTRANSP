@@ -51,7 +51,6 @@
     $mail->Body = $conteudo_email; // coloca as infomaçoes no corpo do email 
     $resul = $mail->send();
     
-
 if ($mail->send()) {
     echo 'Cotação enviada , Entraremos em contato em breve';
 } else {

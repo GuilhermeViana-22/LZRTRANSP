@@ -537,7 +537,7 @@
         /*função de redirecionamento*/
 
         function redirecionar() {
-            window.location.href = "http://localhost/Lanzara/trunk/login/Login_page.php";
+            window.location.href = "login/Login_page.php";
         }
     </script>
 </body>
