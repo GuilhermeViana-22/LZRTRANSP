@@ -13,7 +13,7 @@ include 'banco.php';
             $_SESSION["id_funcionario"] = $dados["id_funcionario"];
         }
     
-        header("Location: index.php");
+        header("Location: inicial.php");
     
     } else {
     
