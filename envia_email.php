@@ -1,4 +1,5 @@
 <?php
+require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php mailer
 //inicializando com as variaves que receberam as informações do metodo post 
     $nomeEmpresa = $_POST['nameEmpresa'];
     $cnpjEmpresa = $_POST['cnpjEmpresa'];
@@ -16,7 +17,7 @@
     $data = date('d/m/Y H:i:s');
     $result = 0;
 
-    require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php mailer
+    
     $mail = new PHPMailer(); // instacia a classe 
     $mail->isSMTP(); // informa o tipo de entrada 
 
@@ -51,10 +52,12 @@
     $mail->Body = $conteudo_email; // coloca as infomaçoes no corpo do email 
     $resul = $mail->send();
     
-if ($mail->send()) {
+if ($resul) {
     echo 'Cotação enviada , Entraremos em contato em breve';
 } else {
     echo 'Email nao enviado';
     
     
 }
+echo "Erro: " . $mail->ErrorInfo
+?>
