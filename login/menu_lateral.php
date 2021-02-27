@@ -8,7 +8,7 @@
                         não será localizado nenhum arquivo
                         -->
 
-                        <?php// if($_SESSION["cargo"] == "Atendente" || $_SESSION["cargo"] == "Gerente" || $_SESSION["cargo"] == "atendente" || $_SESSION["cargo"] == "gerente") { ?>      
+                            
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#controleusu" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Serviços
@@ -22,7 +22,7 @@
                        
                     </nav>
                 </div>
-                        <?php //} ?>  
+                    
             </div>
 
         </div>
