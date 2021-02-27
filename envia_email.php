@@ -54,11 +54,7 @@
 
 if ($mail->send()) {
     echo 'Cotação enviada , Entraremos em contato em breve';
-   // header("location: index.php");
 } else {
-    
-   
-    //header("location: index.php?sucess=1");
     echo 'Email nao enviado';
     
     
