@@ -67,7 +67,7 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="index.html">Empresa</a></li>
+                    <li class="active"><a href="index.php">Empresa</a></li>
                     <!--  <li><a href="#about"></a></li>-->
                     <li><a href="#services">Serviços</a></li>
                     </li>
@@ -420,9 +420,9 @@
                             </div>
                             <div class="text-center"><button id="btn" type="submit" class="col-md-7"><strong>Enviar</strong></button></div>
                             <div class="my-3">
-                               <!--
+                               
                                     <div class="loading">Por gentileza aguarde</div>
-                                <div class="error-message">Cotação enviada</div>-->
+                                <div class="error-message">Cotação enviada</div>
 
                             </div>
                         </form>
