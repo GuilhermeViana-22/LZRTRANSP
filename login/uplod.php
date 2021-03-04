@@ -1,4 +1,4 @@
-<!-- === File Upload ===
+ <!-- === File Upload ===
 Design a file upload element. Is it the loading screen and icon? A progress element? Are folders being uploaded by flying across the screen like Ghostbusters? ;)  
 -->
 <!DOCTYPE html>
