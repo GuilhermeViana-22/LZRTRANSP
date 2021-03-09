@@ -118,11 +118,11 @@ include 'banco.php';
 
 						<form class="login100-form validate-form" method="Post" action="atualiza_senha.php">
 							<div class="wrap-input100 validate-input" data-validate="Enter password">
-								<input class="input100" type="password" id="nsenha" name="nsenha" placeholder="repetir a sua nova senha">
+								<input class="input100" type="password" id="nsenha" name="nsenha" placeholder="Insira a sua nova senha">
 								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							</div>
 							<div class="wrap-input100 validate-input" data-validate="Enter password">
-								<input class="input100" type="password" name="csenha" placeholder="repetir a sua nova senha">
+								<input class="input100" type="password" name="csenha" placeholder="Repetir a sua nova senha">
 								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							</div>
 							<div class="container-login100-form-btn">

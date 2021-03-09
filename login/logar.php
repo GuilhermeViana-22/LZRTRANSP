@@ -17,7 +17,7 @@ include 'banco.php';
     
     } else {
     
-        header("Location: login_page.php?erro=1");
+        header("Location: Login_page.php?erro=1");
     
     }
     ?>

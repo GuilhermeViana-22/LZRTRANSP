@@ -3,7 +3,7 @@ include 'banco.php';
 if (isset($_POST["localizar"])) {
 $email = $_POST['email'];
 $cpf = $_POST['cpf'];
-$query = $conexao->query("SELECT * FROM funcionario WHERE cpf = '" . $cpf . "'");
+$query = $conexao->query("SELECT * FROM funcionario WHERE email = '" . $email . "'");
     
     if($query->num_rows > 0) {
         
@@ -22,7 +22,7 @@ if (isset($_POST["atualizar"])) {
     //$email = $_POST['email'];
     $cpf = $_POST['cpf'];
     $nsenha = $_POST['nsenha'];
-    $sql = "UPDATE funcionario set senha = '$_POST[nsenha]' where  cpf = '$_POST[cpf]'";
+    $sql = "UPDATE funcionario set senha = '$_POST[nsenha]' where  email = '$_POST[email]'";
    $resul = $conexao->query($sql);
  //  var_dump($sql)
     $linhasAfetadas = $conexao->affected_rows;

@@ -21,18 +21,18 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $mail = new PHPMailer(); // instacia a classe 
     $mail->isSMTP(); // informa o tipo de entrada 
 
-    $mail->Host = "smtp.gmail.com"; // smtp do gmail: gmail.com
-    $mail->Port = 587; //porta do gmail 587; porta do yahoo 465
+    $mail->Host = "smtp.hostinger.com.br"; // smtp do servidor
+    $mail->Port = 587; //porta do servido para o envio de email
     $mail->SMTPSecure = "tls"; // informa que o email é seguro 
     $mail->SMTPAuth = true; // e informa que o emaio é verificado
-    $mail->Username = "elton13cdz@gmail.com"; // email do destinatario
-    $mail->Password = "justino123456"; // senha do destinatrio de acesso ao email
+    $mail->Username = "cotacaofrete@lzrtransportes.com.br"; // email do destinatario
+    $mail->Password = "Lzrtransporte2021"; // senha do destinatrio de acesso ao email
 
     $mail->setFrom($mail->Username, $nomeEmpresa); // iforma o remetente 
     $mail->addAddress('elton13cdz@gmail.com'); // emaio que vai recerber as informação(destinatario)
     $mail->Subject = "NOVA COTACAO RECEBIDA !"; // titulo do email (assunto)
     // abaixo contem o corpo do email com as informações 
-    $conteudo_email = "<strong>Lanzara você acaba de receber uma cotação da empresa</strong> $nomeEmpresa <strong>E-mail:
+    $conteudo_email = "<strong>Lanzara você acaba de receber uma cotação da empresa</strong> $nomeEmpresa
   <br><br>
  <strong>CNPJ Remetente :</strong> $cnpjEmpresa.<br>
  <strong>CNPJ Destino :</strong> $cnpjdestino.<br>
@@ -53,11 +53,9 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $resul = $mail->send();
     
 if ($resul) {
-    echo 'Cotação enviada , Entraremos em contato em breve';
+    echo 'Cotação enviada , Entraremos em contato em breve!';
 } else {
-    echo 'Email nao enviado';
+    echo 'E-mail não enviado';
     
     
 }
-echo "Erro: " . $mail->ErrorInfo
-?>
