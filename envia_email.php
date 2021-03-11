@@ -29,7 +29,7 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $mail->Password = "Lzrtransporte2021"; // senha do destinatrio de acesso ao email
 
     $mail->setFrom($mail->Username, $nomeEmpresa); // iforma o remetente 
-    $mail->addAddress('elton13cdz@gmail.com'); // emaio que vai recerber as informação(destinatario)
+    $mail->addAddress('transplanzara@yahoo.com.br'); // emaio que vai recerber as informação(destinatario)
     $mail->Subject = "NOVA COTACAO RECEBIDA !"; // titulo do email (assunto)
     // abaixo contem o corpo do email com as informações 
     $conteudo_email = "<strong>Lanzara você acaba de receber uma cotação da empresa</strong> $nomeEmpresa

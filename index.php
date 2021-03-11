@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Lanzara Transporte</title>
+    <title>LZR Transportes</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons-->
-    <link href="img/lanzara_icon.png" rel="icon">
+    <link href="img/lanzara_icon.png" rel="icon" style="max-width: 100%; max-height:100%;">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -43,7 +43,7 @@
         <div class="container d-flex">
 
             <div style="font-size: large;" class="contact-info mr-auto">
-                <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">transplanzara@yahoo.com.br</a>
+                <i class="icofont-envelope"></i> <a >transplanzara@yahoo.com.br</a>
                 <i class="icofont-phone"></i> +55 11 3938-6519
                 <i class="icofont-phone"></i> +55 11 9997 2773
             </div>
@@ -56,7 +56,7 @@
         <div class="container d-flex align-items-center">
 
             <h1 class="">
-                <img src="assets/img/lanzara_icon.png" class="img-fluid" alt="" style="max-width: 15%">
+                <img src="assets/img/lanzara_iconn.png" class="img-fluid" alt="" style="max-width: 50%; max-height:50%;">
 
             </h1>
 
@@ -94,7 +94,7 @@
                 <div class="carousel-item active" style="background-image: url(assets/img/slide/slide1.jpg)">
                     <div class="carousel-container">
                         <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Lanzara Transportes<span></span></h2>
+                            <h2 class="animate__animated animate__fadeInDown">LZR Transportes<span></span></h2>
                             <p class="animate__animated animate__fadeInUp">Nosso dever é ser uma empresa inovadora,
                                 ágil, confiável e sólida
                                 Ser uma empresa cidadã com respeito e amor ao Brasil
@@ -187,7 +187,7 @@
 
                 <div class="section-title">
                     <h2>QUEM SOMOS</h2>
-                    <p>Fundada em 15 de agosto de 1978 no estado de São Paulo, a Lanzara Transportes é uma empresa que nasceu com o objetivo de suprir as necessidades locais de transporte em função do grande potencial e crescimento da região.</p>
+                    <p>Fundada em 15 de agosto de 1978 no estado de São Paulo, a LZR Transportes é uma empresa que nasceu com o objetivo de suprir as necessidades locais de transporte em função do grande potencial e crescimento da região.</p>
 
                     <p>Voltada à prestação de serviços de transporte, movimentação de cargas, coletas e entregas estamos no segmento logistico a mais de 30 anos, sempre dedicados a atender no momento certo, na hora certa, suprindo a demanda de prazos para qualquer tipo de carga, Nossos princípios principais principios são coragem para enfrentar os novos desafios e respeito com nosso cliente e com seus produtos</p>
                     <p>Com veículos certificados e licenciados </p><br><br>
