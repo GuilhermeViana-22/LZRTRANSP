@@ -18,7 +18,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="Tb_Frete.php">Tabela de frete</a>
                        
-                        <a class="nav-link" href="uplod.php">Documentos</a>
+                        
                        
                     </nav>
                 </div>

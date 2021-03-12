@@ -21,7 +21,7 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $mail = new PHPMailer(); // instacia a classe 
     $mail->isSMTP(); // informa o tipo de entrada 
 
-    $mail->Host = "smtp.hostinger.com.br"; // smtp do servidor
+    $mail->Host = "smtp.hostinger.com.br"; // smtp do servidor hostinger.com.br
     $mail->Port = 587; //porta do servido para o envio de email
     $mail->SMTPSecure = "tls"; // informa que o email é seguro 
     $mail->SMTPAuth = true; // e informa que o emaio é verificado
@@ -29,7 +29,7 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
     $mail->Password = "Lzrtransporte2021"; // senha do destinatrio de acesso ao email
 
     $mail->setFrom($mail->Username, $nomeEmpresa); // iforma o remetente 
-    $mail->addAddress('transplanzara@yahoo.com.br'); // emaio que vai recerber as informação(destinatario)
+    $mail->addAddress('elton13cdz@yahoo.com'); // emaio que vai recerber as informação(destinatario)
     $mail->Subject = "NOVA COTACAO RECEBIDA !"; // titulo do email (assunto)
     // abaixo contem o corpo do email com as informações 
     $conteudo_email = "<strong>Lanzara você acaba de receber uma cotação da empresa</strong> $nomeEmpresa
@@ -55,7 +55,7 @@ require 'PHPMailer/PHPMailerAutoload.php'; // faz a ligação com a classe php m
 if ($resul) {
     echo 'Cotação enviada , Entraremos em contato em breve!';
 } else {
-    echo 'E-mail não enviado';
+    echo 'E-mail não enviado'.$mail->ErrorInfo;
     
     
 }
